@@ -881,7 +881,7 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Zelia<span>Store.id</span></a>
+            <a href="#" class="logo">Zelia<span>store.id</span></a>
             <ul class="nav-links">
                 <li><a href="#features">Fitur</a></li>
                 <li><a href="#gallery">Galeri</a></li>
@@ -1148,4 +1148,194 @@
                             <i class="fas fa-check-circle"></i>
                             <span>Gratis ongkir ke seluruh Indonesia</span>
                         </div>
-                        <div class="
+                        <div class="bonus-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Garansi 1 tahun</span>
+                        </div>
+                        <div class="bonus-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bonus pouch eksklusif</span>
+                        </div>
+                        <div class="bonus-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Gratis kemasan hadiah</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://nava.orderonline.id/checkout-new-small-square-large-bag" class="cta-button">
+                        BELI SEKARANG <i class="fas fa-shopping-bag"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Tentang Kami</h3>
+                    <p style="color: #adb5bd; margin-bottom: 15px;">Zeliastore.id adalah brand fashion wanita yang berkomitmen memberikan produk berkualitas dengan desain terkini.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Tentang Produk</a></li>
+                        <li><a href="#">Kebijakan Pengembalian</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Bantuan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Cara Pesan</a></li>
+                        <li><a href="#">Status Pesanan</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Pembayaran</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                        <img src="https://via.placeholder.com/50x30?text=BCA" alt="BCA" style="border-radius: 4px;">
+                        <img src="https://via.placeholder.com/50x30?text=Mandiri" alt="Mandiri" style="border-radius: 4px;">
+                        <img src="https://via.placeholder.com/50x30?text=BNI" alt="BNI" style="border-radius: 4px;">
+                        <img src="https://via.placeholder.com/50x30?text=BRI" alt="BRI" style="border-radius: 4px;">
+                        <img src="https://via.placeholder.com/50x30?text=DANA" alt="DANA" style="border-radius: 4px;">
+                        <img src="https://via.placeholder.com/50x30?text=OVO" alt="OVO" style="border-radius: 4px;">
+                        <img src="https://via.placeholder.com/50x30?text=Gopay" alt="Gopay" style="border-radius: 4px;">
+                        <img src="https://via.placeholder.com/50x30?text=ShopeePay" alt="ShopeePay" style="border-radius: 4px;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Zeliastore.id. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <a href="https://nava.orderonline.id/checkout-new-small-square-large-bag" class="floating-cta">
+        BELI SEKARANG <i class="fas fa-shopping-bag"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Gallery Modal
+        const modal = document.getElementById('gallery-modal');
+        const modalImg = document.getElementById('modal-img');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const closeModal = document.querySelector('.close-modal');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').src;
+                modal.style.display = 'block';
+                modalImg.src = imgSrc;
+            });
+        });
+        
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date();
+            endOfDay.setHours(23, 59, 59, 999);
+            
+            const diff = endOfDay - now;
+            
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown-hours').textContent = Math.floor(hours).toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = Math.floor(minutes).toString().padStart(2, '0');
+            document.getElementById('countdown-seconds').textContent = Math.floor(seconds).toString().padStart(2, '0');
+            
+            // Update the urgency banner timer
+            const timerString = `${Math.floor(hours).toString().padStart(2, '0')}:${Math.floor(minutes).toString().padStart(2, '0')}:${Math.floor(seconds).toString().padStart(2, '0')}`;
+            document.getElementById('countdown-timer').textContent = timerString;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Dynamic Stock Counter
+        function updateStock() {
+            const stockElement = document.getElementById('stock-counter');
+            let stock = parseInt(stockElement.textContent);
+            
+            // Randomly decrease stock occasionally to create urgency
+            if (Math.random() > 0.7 && stock > 0) {
+                stock -= Math.floor(Math.random() * 2) + 1;
+                if (stock < 0) stock = 0;
+                stockElement.textContent = stock;
+                
+                // Flash the stock number when it changes
+                stockElement.style.color = 'red';
+                setTimeout(() => {
+                    stockElement.style.color = '';
+                }, 500);
+            }
+        }
+        
+        setInterval(updateStock, 10000);
+        
+        // View Counter Animation
+        function animateViewCounter() {
+            const viewElement = document.getElementById('view-counter');
+            let views = 5200;
+            
+            setInterval(() => {
+                views += Math.floor(Math.random() * 3);
+                viewElement.textContent = (views / 1000).toFixed(1) + 'k';
+            }, 5000);
+        }
+        
+        animateViewCounter();
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
